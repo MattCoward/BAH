@@ -1,0 +1,283 @@
+/*============================
+Package: Unsettling Scientific Stories
+Author: Matt Coward
+Date: 2018
+============================*/
+
+/*IMPORT FONT*/
+
+@import url('https://fonts.googleapis.com/css?family=Cousine:400,400i,700');
+
+/*MAIN CLASSES*/
+
+body {
+  font-family: 'Cousine';
+  color: #0c0e0f;
+  background-image: url("image/bg.gif")
+}
+
+.passage a {
+  color: #9e3f0f;
+}
+
+.passage a:hover {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.thick {
+  font-weight: bold;
+}
+
+#passages {
+	padding-left: auto;
+	  padding-right: auto;
+}
+
+/*CONTAINER & SUB CLASSES*/
+
+.container div {
+  background: #f2f3f4;
+  padding: 10px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+  margin: 15px;
+  grid-template-areas:
+	  "header header header"
+	 "pic pic sidebar"
+	  "text text text"
+	"footer footer footer"
+}
+
+.header {
+  grid-area: header;
+  color: #0c0e0f;
+	border-style: groove;
+  border-color: #0c0e0f;
+  max-height: 90px;
+  border-width: 4px 6px 4px 6px;
+  text-align: center;
+  box-shadow: 4px 4px 2px #0c0e0f;
+}
+
+.pic {
+  grid-area: pic;
+  border-style: groove;
+  border-color: #0c0e0f;
+  border-width: 4px 6px 14px 6px;
+	 box-shadow: 4px 4px 2px #0c0e0f;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  min-height: 260px;
+	  border-style: groove;
+  border-color: #0c0e0f;
+  border-width: 4px 6px 14px 6px;
+	 box-shadow: 4px 4px 2px #0c0e0f;
+}
+
+.text {
+  grid-area: text;
+  min-height: 320px;
+  overflow: auto;
+  border-style: double;
+  border-color: #0c0e0f;
+  border-width: 6px 6px 6px 6px;
+  box-shadow: 4px 4px 2px #0c0e0f;
+}
+
+.footer {
+  grid-area:footer;
+  text-align: center;
+	  border-style: groove;
+  border-color: #0c0e0f;
+  border-width: 4px 6px 4px 6px;
+	 box-shadow: 4px 4px 2px #0c0e0f;
+}
+
+img {
+	width: 100%;
+	 height: auto;
+}
+
+/* TEXT STYLES */
+
+.shadow {
+	text-shadow: 0.08em 0.08em 0.08em #FFF;
+}
+.emboss {
+	text-shadow: 0.08em 0.08em 0em #FFF;
+	color: black;
+}
+.blur {
+	color: transparent;
+	text-shadow: 0em 0em 0.08em #FFF;
+}
+.blurrier {
+	color: transparent;
+	text-shadow: 0em 0em 0.2em #FFF;
+}
+.blurrier::selection {
+	background-color: transparent;
+	color: transparent;
+}
+.blurrier::-moz-selection {
+	background-color: transparent;
+	color: transparent;
+}
+.smear {
+	color: black;
+	text-shadow:
+	0em    0em 0.02em rgba(255,255,255,0.75),
+	-0.2em 0em 0.5em  rgba(255,255,255,0.5),
+	0.2em  0em 0.5em  rgba(255,255,255,0.5);
+}
+.mirror {
+	display: inline-block;
+	transform: scaleX(-1);
+	-webkit-transform: scaleX(-1);
+}
+.upside-down {
+	display: inline-block;
+	transform: scaleY(-1);
+	-webkit-transform: scaleY(-1);
+}
+
+@-webkit-keyframes fade-in-out {
+	0%,
+	to {opacity: 0}
+	50% {opacity: 1}
+}
+@keyframes fade-in-out {
+	0%,
+	to {opacity: 0}
+	50% {opacity: 1}
+}
+.fade-in-out {
+	text-decoration: none;
+	animation: fade-in-out 2s ease-in-out infinite alternate;
+	-webkit-animation: fade-in-out 2s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes rumble {
+	50% {
+	-webkit-transform: translateY(-.2em);
+	transform: translateY(-.2em)
+	}
+}
+@keyframes rumble {
+	50% {
+	-webkit-transform: translateY(-.2em);
+	transform: translateY(-.2em)
+	}
+}
+.rumble {
+	-webkit-animation: rumble linear 0.1s 0s infinite;
+	animation: rumble linear 0.1s 0s infinite;
+	display:inline-block;
+}
+
+@-webkit-keyframes shudder {
+	50% {
+	-webkit-transform: translateX(0.2em);
+	transform: translateX(0.2em)
+	}
+}
+@keyframes shudder {
+	50% {
+	-webkit-transform: translateX(0.2em);
+	transform: translateX(0.2em)
+	}
+}
+.shudder {
+	-webkit-animation: shudder linear 0.1s 0s infinite;
+	animation: shudder linear 0.1s 0s infinite;
+	display: inline-block;
+}
+
+/*Speech bubble left*/
+
+div.sbl{
+	position: relative;
+	background-color: #c9c7b8;
+	border-radius: .4em;
+	padding: 2.5%;
+}
+
+div.sbl::after{
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 22px solid transparent;
+	border-right-color: #c9c7b8; /*to change pointer colour*/
+	border-left: 0;
+	border-top: 0;
+	margin-top: -11px;
+	margin-left: -22px;
+}
+
+/*Speech bubble right*/
+
+div.sbr {
+	position: relative;
+	background: #c9c7b8; /*main colour*/
+	border-radius: .4em;
+	  padding: 2.5%;
+}
+
+div.sbr::after {
+	content: '';
+	position: absolute;
+	right: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 22px solid transparent;
+	border-left-color: #c9c7b8; /*pointer: needs to match 'main colour'*/
+	border-right: 0;
+	border-top: 0;
+	margin-top: -11px;
+	margin-right: -22px;
+}
+
+/*Transparent table*/
+
+td {
+  background: transparent;
+  align-content: center;
+}
+td.t75 {
+  width: 75%;
+  margin-left: 5px;
+}
+td.t20 {
+  width: 20%;
+  align-content; right;
+}
+td.m {
+	width: 5%;
+}
+td.t100 {
+	width:100%
+}
+td.t75, td.t20, td.t100 td.m {
+  background: transparent;
+}
+table {
+  width: 100%;
+}
+a{
+  color: #bf1845;
+  font-weight: normal;
+  text-decoration: none;
+}
+
+/*------------------------ END CSS -------------------------------------*/

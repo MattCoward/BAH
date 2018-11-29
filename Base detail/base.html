@@ -1,0 +1,45 @@
+<!--============================
+Package: Unsettling Scientific Stories
+Author: Matt Coward
+Date: 2018
+============================-->
+
+<!--Call Typewriter-->
+<head><<nobr>><<widget typewriter>><span id="typewriter"></span><<set _textArrayLength to 0>><<repeat 0.075s>><<if _textArrayLength gte $args[0].length>><<stop>><<else>><<append "#typewriter">>$args[0][_textArrayLength]<</append>><!-- Update the length --><<set _textArrayLength++>><</if>><</repeat>><</widget>><</nobr>></head>
+
+
+<!--Base DIV classes-->
+
+<div class="container">
+
+	<div class="header"><img src="image/bah.png"></div>
+
+	<div class="pic"><img src="X"></div>
+
+	<div class="sidebar"><img src="image/bah.gif"></div>
+
+	<div class="text"></div>
+
+	<div class="footer"></div>
+
+</div>
+
+<!-- Base table -->
+
+<table>
+   <tbody>
+      <tr>
+         <td class="t20"></td>
+         <td class="m"></td>
+         <td class="t75"></td>
+      </tr>
+		<tr>
+			<td class="t100"></td>
+		</tr>
+		<tr>
+			<td class="t20"></td>
+			<td class="m"></td>
+			<td class="t75"></td>
+		</tr>
+   </tbody>
+</table>
